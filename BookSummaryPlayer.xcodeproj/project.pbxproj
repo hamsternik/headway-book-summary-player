@@ -37,6 +37,7 @@
 		62CD48F729531EAF00AC4D8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		62CD48F929531EAF00AC4D8B /* BookSummaryPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSummaryPlayerTests.swift; sourceTree = "<group>"; };
 		62CD4900295320C600AC4D8B /* BookSummaryPlayerTechSpec.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BookSummaryPlayerTechSpec.md; sourceTree = "<group>"; };
+		62CD49012953217100AC4D8B /* photo_2022-12-21 13.10.07.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "photo_2022-12-21 13.10.07.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +125,7 @@
 		62CD48FF295320C600AC4D8B /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				62CD49012953217100AC4D8B /* photo_2022-12-21 13.10.07.jpeg */,
 				62CD4900295320C600AC4D8B /* BookSummaryPlayerTechSpec.md */,
 			);
 			path = Documentation;
