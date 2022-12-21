@@ -14,6 +14,19 @@
 		62CD48FC29531EC100AC4D8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62CD48F429531EAF00AC4D8B /* Preview Assets.xcassets */; };
 		62CD48FD29531ECB00AC4D8B /* BookSummaryPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CD48F629531EAF00AC4D8B /* BookSummaryPlayerApp.swift */; };
 		62CD48FE29531ECE00AC4D8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CD48F729531EAF00AC4D8B /* ContentView.swift */; };
+		62CD49102953647D00AC4D8B /* 02_Uncharted 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD49032953647900AC4D8B /* 02_Uncharted 4.mp3 */; };
+		62CD49112953647D00AC4D8B /* 06_Dragon Age- Inquisition.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD49042953647A00AC4D8B /* 06_Dragon Age- Inquisition.mp3 */; };
+		62CD49122953647D00AC4D8B /* 03_Stardew Valley.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD49052953647A00AC4D8B /* 03_Stardew Valley.mp3 */; };
+		62CD49132953647D00AC4D8B /* 07_Shovel Knight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD49062953647A00AC4D8B /* 07_Shovel Knight.mp3 */; };
+		62CD49142953647D00AC4D8B /* 05_Halo Wars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD49072953647B00AC4D8B /* 05_Halo Wars.mp3 */; };
+		62CD49152953647D00AC4D8B /* 09_The Witcher 3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD49082953647B00AC4D8B /* 09_The Witcher 3.mp3 */; };
+		62CD49162953647D00AC4D8B /* 11_Epilog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD49092953647B00AC4D8B /* 11_Epilog.mp3 */; };
+		62CD49172953647D00AC4D8B /* 01_Pillars of Eternity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490A2953647C00AC4D8B /* 01_Pillars of Eternity.mp3 */; };
+		62CD49182953647D00AC4D8B /* 00_Para slov ot perevodchika.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490B2953647C00AC4D8B /* 00_Para slov ot perevodchika.mp3 */; };
+		62CD49192953647D00AC4D8B /* 08_Destiny.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490C2953647D00AC4D8B /* 08_Destiny.mp3 */; };
+		62CD491A2953647D00AC4D8B /* 10_Star Wars 1313.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490D2953647D00AC4D8B /* 10_Star Wars 1313.mp3 */; };
+		62CD491B2953647D00AC4D8B /* blood-sweat-and-pixels-bookcover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490E2953647D00AC4D8B /* blood-sweat-and-pixels-bookcover.jpg */; };
+		62CD491C2953647D00AC4D8B /* 04_Diablo III.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490F2953647D00AC4D8B /* 04_Diablo III.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +50,20 @@
 		62CD48F729531EAF00AC4D8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		62CD48F929531EAF00AC4D8B /* BookSummaryPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSummaryPlayerTests.swift; sourceTree = "<group>"; };
 		62CD4900295320C600AC4D8B /* BookSummaryPlayerTechSpec.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BookSummaryPlayerTechSpec.md; sourceTree = "<group>"; };
-		62CD49012953217100AC4D8B /* photo_2022-12-21 13.10.07.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "photo_2022-12-21 13.10.07.jpeg"; sourceTree = "<group>"; };
+		62CD49012953217100AC4D8B /* screen-mockup.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "screen-mockup.jpeg"; sourceTree = "<group>"; };
+		62CD49032953647900AC4D8B /* 02_Uncharted 4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "02_Uncharted 4.mp3"; sourceTree = "<group>"; };
+		62CD49042953647A00AC4D8B /* 06_Dragon Age- Inquisition.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "06_Dragon Age- Inquisition.mp3"; sourceTree = "<group>"; };
+		62CD49052953647A00AC4D8B /* 03_Stardew Valley.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "03_Stardew Valley.mp3"; sourceTree = "<group>"; };
+		62CD49062953647A00AC4D8B /* 07_Shovel Knight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "07_Shovel Knight.mp3"; sourceTree = "<group>"; };
+		62CD49072953647B00AC4D8B /* 05_Halo Wars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "05_Halo Wars.mp3"; sourceTree = "<group>"; };
+		62CD49082953647B00AC4D8B /* 09_The Witcher 3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "09_The Witcher 3.mp3"; sourceTree = "<group>"; };
+		62CD49092953647B00AC4D8B /* 11_Epilog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 11_Epilog.mp3; sourceTree = "<group>"; };
+		62CD490A2953647C00AC4D8B /* 01_Pillars of Eternity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01_Pillars of Eternity.mp3"; sourceTree = "<group>"; };
+		62CD490B2953647C00AC4D8B /* 00_Para slov ot perevodchika.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "00_Para slov ot perevodchika.mp3"; sourceTree = "<group>"; };
+		62CD490C2953647D00AC4D8B /* 08_Destiny.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 08_Destiny.mp3; sourceTree = "<group>"; };
+		62CD490D2953647D00AC4D8B /* 10_Star Wars 1313.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10_Star Wars 1313.mp3"; sourceTree = "<group>"; };
+		62CD490E2953647D00AC4D8B /* blood-sweat-and-pixels-bookcover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blood-sweat-and-pixels-bookcover.jpg"; sourceTree = "<group>"; };
+		62CD490F2953647D00AC4D8B /* 04_Diablo III.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "04_Diablo III.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				62CD48F229531EAF00AC4D8B /* Assets.xcassets */,
+				62CD49022953645700AC4D8B /* Audiobooks */,
 				62CD48F329531EAF00AC4D8B /* Preview Content */,
 			);
 			path = Resources;
@@ -125,10 +152,38 @@
 		62CD48FF295320C600AC4D8B /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				62CD49012953217100AC4D8B /* photo_2022-12-21 13.10.07.jpeg */,
+				62CD49012953217100AC4D8B /* screen-mockup.jpeg */,
 				62CD4900295320C600AC4D8B /* BookSummaryPlayerTechSpec.md */,
 			);
 			path = Documentation;
+			sourceTree = "<group>";
+		};
+		62CD49022953645700AC4D8B /* Audiobooks */ = {
+			isa = PBXGroup;
+			children = (
+				62CD491D2953651600AC4D8B /* BloodSweatAndPixels */,
+			);
+			path = Audiobooks;
+			sourceTree = "<group>";
+		};
+		62CD491D2953651600AC4D8B /* BloodSweatAndPixels */ = {
+			isa = PBXGroup;
+			children = (
+				62CD490B2953647C00AC4D8B /* 00_Para slov ot perevodchika.mp3 */,
+				62CD490A2953647C00AC4D8B /* 01_Pillars of Eternity.mp3 */,
+				62CD49032953647900AC4D8B /* 02_Uncharted 4.mp3 */,
+				62CD49052953647A00AC4D8B /* 03_Stardew Valley.mp3 */,
+				62CD490F2953647D00AC4D8B /* 04_Diablo III.mp3 */,
+				62CD49072953647B00AC4D8B /* 05_Halo Wars.mp3 */,
+				62CD49042953647A00AC4D8B /* 06_Dragon Age- Inquisition.mp3 */,
+				62CD49062953647A00AC4D8B /* 07_Shovel Knight.mp3 */,
+				62CD490C2953647D00AC4D8B /* 08_Destiny.mp3 */,
+				62CD49082953647B00AC4D8B /* 09_The Witcher 3.mp3 */,
+				62CD490D2953647D00AC4D8B /* 10_Star Wars 1313.mp3 */,
+				62CD49092953647B00AC4D8B /* 11_Epilog.mp3 */,
+				62CD490E2953647D00AC4D8B /* blood-sweat-and-pixels-bookcover.jpg */,
+			);
+			path = BloodSweatAndPixels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,9 +267,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62CD49142953647D00AC4D8B /* 05_Halo Wars.mp3 in Resources */,
+				62CD49192953647D00AC4D8B /* 08_Destiny.mp3 in Resources */,
 				62CD48FC29531EC100AC4D8B /* Preview Assets.xcassets in Resources */,
+				62CD49152953647D00AC4D8B /* 09_The Witcher 3.mp3 in Resources */,
+				62CD49102953647D00AC4D8B /* 02_Uncharted 4.mp3 in Resources */,
 				62CD48ED29531E9700AC4D8B /* LICENSE in Resources */,
+				62CD49162953647D00AC4D8B /* 11_Epilog.mp3 in Resources */,
+				62CD49182953647D00AC4D8B /* 00_Para slov ot perevodchika.mp3 in Resources */,
 				62CD48FB29531EBE00AC4D8B /* Assets.xcassets in Resources */,
+				62CD49122953647D00AC4D8B /* 03_Stardew Valley.mp3 in Resources */,
+				62CD491C2953647D00AC4D8B /* 04_Diablo III.mp3 in Resources */,
+				62CD491B2953647D00AC4D8B /* blood-sweat-and-pixels-bookcover.jpg in Resources */,
+				62CD491A2953647D00AC4D8B /* 10_Star Wars 1313.mp3 in Resources */,
+				62CD49172953647D00AC4D8B /* 01_Pillars of Eternity.mp3 in Resources */,
+				62CD49112953647D00AC4D8B /* 06_Dragon Age- Inquisition.mp3 in Resources */,
+				62CD49132953647D00AC4D8B /* 07_Shovel Knight.mp3 in Resources */,
 				62CD48EE29531E9700AC4D8B /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
