@@ -18,7 +18,7 @@ All audio and image assets are keeping in the /Resources/Audiobooks. Find out ei
 <details>
 <summary>Screen Mockup</summary>
 
-![Image](Documentation/photo_2022-12-21%2013.10.07.jpeg)
+![Screen Design](Documentation/screen-mockup.jpeg)
 
 </details>
 
@@ -26,9 +26,9 @@ All audio and image assets are keeping in the /Resources/Audiobooks. Find out ei
 
 The technical solution described in the [tech spec](Documentation/BookSummaryPlayerTechSpec.md) document.
 
-### Misc
+### MISC: Resources That Helps Me To Build The App
 
-1/ [Media Control Icons](https://icons8.com/icon/set/media-controls/windows)
-2/ [Typography. Font Specifications](https://developer.apple.com/design/human-interface-guidelines/foundations/typography) 
-3/ [SwiftUI Slider. Apple component](https://developer.apple.com/documentation/swiftui/slider)
-4/ [How to customise the Slider in SwiftUI](https://swdevnotes.com/swift/2021/how-to-customise-the-slider-in-swiftui/)
+- [Typography. Font Specifications](https://developer.apple.com/design/human-interface-guidelines/foundations/typography)
+- [Media Control Icons](https://icons8.com/icon/set/media-controls/windows)
+- [SwiftUI Slider. Apple component](https://developer.apple.com/documentation/swiftui/slider)
+- [How to customise the Slider in SwiftUI](https://swdevnotes.com/swift/2021/how-to-customise-the-slider-in-swiftui/)
