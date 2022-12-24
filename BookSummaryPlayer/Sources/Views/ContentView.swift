@@ -195,7 +195,7 @@ struct ContentView: View {
     private var audioTextSwitcherContainer: some View {
         VStack {
             Spacer()
-            audioTextSwitchView
+            audioTextSwitchContainer
                 .safeAreaInset(edge: .bottom) {
                     if let window = UIApplication.shared.windows.first,
                         window.safeAreaInsets.bottom <= 0 {
@@ -206,56 +206,83 @@ struct ContentView: View {
     }
     
     @ViewBuilder
+    private var audioTextSwitchContainer: some View {
+        HStack {
+            Spacer()
+            audioTextSwitchView
+            Spacer()
+        }
+    }
+    
+    @ViewBuilder
     private var audioTextSwitchView: some View {
-        let componentWidth =  0.4 * UIScreen.main.bounds.width
-        let componentHeight: Double = 64
-//        GeometryReader { geometry in
+        let componentWidth = 0.333 * UIScreen.main.bounds.width
+        let componentHeight: CGFloat = 72
+        let borderColor = Color(red: 238 / 255, green: 235 / 255, blue: 233 / 255)
+        let capsuleOverlayBorderWidth: CGFloat = 2
+        let capsuleOverlay = Capsule(style: .circular)
+            .strokeBorder(borderColor, lineWidth: capsuleOverlayBorderWidth)
+            .frame(width: componentWidth)
+        
+        ZStack {
+            Capsule(style: .circular)
+                .foregroundColor(.white)
+                .frame(width: componentWidth)
+            
             HStack {
-                Spacer()
-                ZStack {
-                    Capsule(style: .circular)
-                        .frame(width: componentWidth)
-                        .foregroundColor(.white)
-                    HStack {
-                        if isBookTextToggled {
-                            Spacer()
-                            Circle()
-                                .foregroundColor(Color.init(red: 41 / 255, green: 99 / 255, blue: 247 / 255))
-                                .frame(height: componentHeight - 10)
-                                .padding(.leading, 10)
-                        } else {
-                            Circle()
-                                .foregroundColor(Color.init(red: 41 / 255, green: 99 / 255, blue: 247 / 255))
-                                .frame(height: componentHeight - 10)
-                                .padding(.leading, 10)
-                            Spacer()
-                        }
-                    }
-                    HStack(alignment: .center) {
-                        Image("headphones-button-96")
-                            .resizable().scaledToFit()
-                            .frame(width: 30)
-                            .padding()
-                        Spacer()
-                        Image("multiline-text-button-96")
-                            .resizable().scaledToFit()
-                            .frame(width: 30)
-                            .padding()
-                    }
-                }
-                .frame(width: componentWidth, height: componentHeight)
-                .overlay(
-                    Capsule(style: .circular)
-                        .strokeBorder(Color.init(red: 238 / 255, green: 235 / 255, blue: 233 / 255), lineWidth: 2)
+                let foregroundColor = Color(red: 41 / 255, green: 99 / 255, blue: 247 / 255)
+                /// Hardcoded value. Might be calculated somehow. Depends from screen size, as `componentWidth` is dynamic.
+                let space: (x: CGFloat, y: CGFloat) = (x: 2, y: 4)
+                /// Offset between the circle for selected option and bg capsule, including its border width.
+                /// We double each value to cover both `.leading` and `.trailing` sides.
+                let offset: (x: CGFloat, y: CGFloat) = (
+                    2 * capsuleOverlayBorderWidth + 2 * space.x,
+                    2 * capsuleOverlayBorderWidth + 2 * space.y
                 )
-                .onTapGesture {
-                    withAnimation {
-                        isBookTextToggled.toggle()
-                    }
+                /// We guarantee that component `height` is always less than its `width`.
+                /// In general case we have to calculate `min(width, height)`,
+                /// using `space` and `offset` for according axis to calculate the radius correctly.
+                let radius = (componentHeight - offset.y) / 2
+                let selectedItemCircleView = Circle()
+                    .foregroundColor(foregroundColor)
+                    .frame(height: radius * 2)
+                    .offset(x: !isBookTextToggled ? offset.x : -offset.x)
+                if !isBookTextToggled {
+                    selectedItemCircleView
+                    Spacer()
+                } else {
+                    Spacer()
+                    selectedItemCircleView
                 }
-                Spacer()
             }
-//        }
+            
+            HStack(alignment: .center, spacing: 32) {
+                let xPadding: CGFloat = 10
+                let headphonesImage = Image("headphones-button-96")
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 24)
+                    .padding(.leading, xPadding)
+                let multilineTextImage = Image("multiline-text-button-96")
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 24)
+                    .padding(.trailing, xPadding)
+                headphonesImage
+                    .foregroundColor(!isBookTextToggled ? .white : .black)
+                multilineTextImage
+                    .foregroundColor(!isBookTextToggled ? .black : .white)
+            }
+        }
+        .frame(width: componentWidth, height: componentHeight)
+        .overlay(capsuleOverlay)
+        .onTapGesture {
+            withAnimation {
+                isBookTextToggled.toggle()
+            }
+        }
     }
 }
 
