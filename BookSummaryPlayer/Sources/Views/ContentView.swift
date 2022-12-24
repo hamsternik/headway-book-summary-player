@@ -196,7 +196,7 @@ struct ContentView: View {
         VStack {
             Spacer()
             audioTextSwitchContainer
-                .safeAreaInset(edge: .bottom) {
+                .safeAreaInset(edge: .bottom) { /// Handle either older iPhones and new with bottom safe area.
                     if let window = UIApplication.shared.windows.first,
                         window.safeAreaInsets.bottom <= 0 {
                         Spacer().frame(height: 12)
