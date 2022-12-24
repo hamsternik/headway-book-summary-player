@@ -25,3 +25,10 @@ All audio and image assets are keeping in the /Resources/Audiobooks. Find out ei
 ### Implementation Details
 
 The technical solution described in the [tech spec](Documentation/BookSummaryPlayerTechSpec.md) document.
+
+### Misc
+
+1/ [Media Control Icons](https://icons8.com/icon/set/media-controls/windows)
+2/ [Typography. Font Specifications](https://developer.apple.com/design/human-interface-guidelines/foundations/typography) 
+3/ [SwiftUI Slider. Apple component](https://developer.apple.com/documentation/swiftui/slider)
+4/ [How to customise the Slider in SwiftUI](https://swdevnotes.com/swift/2021/how-to-customise-the-slider-in-swiftui/)

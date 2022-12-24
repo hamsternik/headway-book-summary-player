@@ -135,8 +135,8 @@
 		62CD48F529531EAF00AC4D8B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				62CD491E295370A600AC4D8B /* Views */,
 				62CD48F629531EAF00AC4D8B /* BookSummaryPlayerApp.swift */,
-				62CD48F729531EAF00AC4D8B /* ContentView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -184,6 +184,14 @@
 				62CD490E2953647D00AC4D8B /* blood-sweat-and-pixels-bookcover.jpg */,
 			);
 			path = BloodSweatAndPixels;
+			sourceTree = "<group>";
+		};
+		62CD491E295370A600AC4D8B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				62CD48F729531EAF00AC4D8B /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
