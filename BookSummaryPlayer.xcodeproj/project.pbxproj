@@ -12,7 +12,7 @@
 		62CD48FA29531EB800AC4D8B /* BookSummaryPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CD48F929531EAF00AC4D8B /* BookSummaryPlayerTests.swift */; };
 		62CD48FB29531EBE00AC4D8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62CD48F229531EAF00AC4D8B /* Assets.xcassets */; };
 		62CD48FC29531EC100AC4D8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62CD48F429531EAF00AC4D8B /* Preview Assets.xcassets */; };
-		62CD48FD29531ECB00AC4D8B /* BookSummaryPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CD48F629531EAF00AC4D8B /* BookSummaryPlayerApp.swift */; };
+		62CD48FD29531ECB00AC4D8B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CD48F629531EAF00AC4D8B /* App.swift */; };
 		62CD48FE29531ECE00AC4D8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CD48F729531EAF00AC4D8B /* ContentView.swift */; };
 		62CD49102953647D00AC4D8B /* 02_Uncharted 4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD49032953647900AC4D8B /* 02_Uncharted 4.mp3 */; };
 		62CD49112953647D00AC4D8B /* 06_Dragon Age- Inquisition.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD49042953647A00AC4D8B /* 06_Dragon Age- Inquisition.mp3 */; };
@@ -29,6 +29,9 @@
 		62CD491C2953647D00AC4D8B /* 04_Diablo III.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490F2953647D00AC4D8B /* 04_Diablo III.mp3 */; };
 		62EE4B812958B3AE00B4DE67 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EE4B802958B3AE00B4DE67 /* AudioPlayer.swift */; };
 		62EE4B842958C5E900B4DE67 /* AudioPlayerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EE4B832958C5E900B4DE67 /* AudioPlayerDataSource.swift */; };
+		62EE4B862958E52F00B4DE67 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EE4B852958E52F00B4DE67 /* ContentViewModel.swift */; };
+		62EE4B882958E7A200B4DE67 /* AudioBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EE4B872958E7A200B4DE67 /* AudioBook.swift */; };
+		62EE4B8A2958E7DA00B4DE67 /* BloodSweatAndPixelsAudioBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EE4B892958E7DA00B4DE67 /* BloodSweatAndPixelsAudioBook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +51,7 @@
 		62CD48EC29531E9700AC4D8B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		62CD48F229531EAF00AC4D8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62CD48F429531EAF00AC4D8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		62CD48F629531EAF00AC4D8B /* BookSummaryPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSummaryPlayerApp.swift; sourceTree = "<group>"; };
+		62CD48F629531EAF00AC4D8B /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		62CD48F729531EAF00AC4D8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		62CD48F929531EAF00AC4D8B /* BookSummaryPlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSummaryPlayerTests.swift; sourceTree = "<group>"; };
 		62CD4900295320C600AC4D8B /* BookSummaryPlayerTechSpec.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BookSummaryPlayerTechSpec.md; sourceTree = "<group>"; };
@@ -69,6 +72,9 @@
 		62EE4B802958B3AE00B4DE67 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		62EE4B822958B57900B4DE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		62EE4B832958C5E900B4DE67 /* AudioPlayerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerDataSource.swift; sourceTree = "<group>"; };
+		62EE4B852958E52F00B4DE67 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		62EE4B872958E7A200B4DE67 /* AudioBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBook.swift; sourceTree = "<group>"; };
+		62EE4B892958E7DA00B4DE67 /* BloodSweatAndPixelsAudioBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodSweatAndPixelsAudioBook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,9 +148,11 @@
 			isa = PBXGroup;
 			children = (
 				62CD491E295370A600AC4D8B /* Views */,
+				62CD48F629531EAF00AC4D8B /* App.swift */,
+				62EE4B872958E7A200B4DE67 /* AudioBook.swift */,
+				62EE4B892958E7DA00B4DE67 /* BloodSweatAndPixelsAudioBook.swift */,
 				62EE4B802958B3AE00B4DE67 /* AudioPlayer.swift */,
 				62EE4B832958C5E900B4DE67 /* AudioPlayerDataSource.swift */,
-				62CD48F629531EAF00AC4D8B /* BookSummaryPlayerApp.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -198,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				62CD48F729531EAF00AC4D8B /* ContentView.swift */,
+				62EE4B852958E52F00B4DE67 /* ContentViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,8 +328,11 @@
 			files = (
 				62EE4B842958C5E900B4DE67 /* AudioPlayerDataSource.swift in Sources */,
 				62CD48FE29531ECE00AC4D8B /* ContentView.swift in Sources */,
-				62CD48FD29531ECB00AC4D8B /* BookSummaryPlayerApp.swift in Sources */,
+				62CD48FD29531ECB00AC4D8B /* App.swift in Sources */,
+				62EE4B8A2958E7DA00B4DE67 /* BloodSweatAndPixelsAudioBook.swift in Sources */,
+				62EE4B882958E7A200B4DE67 /* AudioBook.swift in Sources */,
 				62EE4B812958B3AE00B4DE67 /* AudioPlayer.swift in Sources */,
+				62EE4B862958E52F00B4DE67 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
