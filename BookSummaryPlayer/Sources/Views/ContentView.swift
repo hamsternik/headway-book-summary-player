@@ -9,23 +9,40 @@ import SwiftUI
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(
+            viewModel: ContentViewModel(
+                onTapClose: {},
+                onChangeSpeed: {},
+                onChangeReplay: { _ in },
+                onChangeAudio: { _ in },
+                onPlayOrPauseAudio: {},
+                onSwitchAudioAndTextView: { _, _ in }
+            )
+        )
     }
 }
 
 struct ContentView: View {
+    @ObservedObject var viewModel: ContentViewModel
+    
     var body: some View {
         ZStack {
             Color(red: 254 / 255, green: 248 / 255, blue: 247 / 255)
                 .ignoresSafeArea(.all)
             containerView
+        }.onAppear {
+            Task {
+                guard let duration = try? await viewModel.audioPlayer.currentAudioDuration else { return }
+                audioDuration = String(format: "%.2f", duration)
+            }
         }
     }
     
     @State private var isPaused = false
     @State private var audioCurrentPlace: Double = 0
     @State private var isAudioPlaceChanged = false
-    @State private var isBookTextToggled = false
+    @State private var isBookTextRepresentation = false
+    @State private var audioDuration: String = "00:00"
     
     @ViewBuilder
     private var containerView: some View {
@@ -68,7 +85,7 @@ struct ContentView: View {
     @ViewBuilder
     private var closeButton: some View {
         Button {
-            noop()
+            viewModel.onTapClose()
         } label: {
             Image("cross-button-48")
                 .resizable()
@@ -106,12 +123,12 @@ struct ContentView: View {
         Slider(value: $audioCurrentPlace, in: 0.0...2.16, step: 0.01) {
             Text("Current audio place")
         } minimumValueLabel: {
-            Text("00:00")
+            Text("\(String(format: "%.2f", viewModel.audioPlayer.currentTime))")
                 .font(.subheadline)
                 .fontWeight(.light)
                 .foregroundColor(.gray)
         } maximumValueLabel: {
-            Text("02:16")
+            Text(audioDuration)
                 .font(.subheadline)
                 .fontWeight(.light)
                 .foregroundColor(.gray)
@@ -123,7 +140,7 @@ struct ContentView: View {
     @ViewBuilder
     private var audioSpeedButton: some View {
         Button {
-            noop()
+            viewModel.onChangeSpeed()
         } label: {
             Text("Speed 1x")
                 .foregroundColor(.black)
@@ -141,23 +158,12 @@ struct ContentView: View {
     @ViewBuilder
     private var playerControlsView: some View {
         HStack(alignment: .center, spacing: 28) {
-            Button {
-                noop()
-            } label: {
-                Image("playback-prev-button-50")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 32)
-                    .offset(x: 8)
-            }.buttonStyle(SizeScalingButtonStyle())
-            Button {
-                noop()
-            } label: {
-                Image("replay-back-5-button-64")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 44)
-            }.buttonStyle(SizeScalingButtonStyle())
+            PlaybackButtonControl(title: "playback-prev-button-50", width: 32, xOffset: 8) {
+                viewModel.onChangeAudio(.previous)
+            }
+            PlaybackButtonControl(title: "replay-back-5-button-64", width: 44, xOffset: 0) {
+                viewModel.onChangeReplay(.fiveSecondsBack)
+            }
             Button {
                 isPaused.toggle()
             } label: {
@@ -171,23 +177,12 @@ struct ContentView: View {
                     .scaledToFit()
                     .frame(width: 50)
             }.buttonStyle(SizeScalingButtonStyle())
-            Button {
-                noop()
-            } label: {
-                Image("replay-next-10-button-64")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 44)
-            }.buttonStyle(SizeScalingButtonStyle())
-            Button {
-                noop()
-            } label: {
-                Image("playback-next-button-50")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 30)
-                    .offset(x: -8)
-            }.buttonStyle(SizeScalingButtonStyle())
+            PlaybackButtonControl(title: "replay-next-10-button-64", width: 44, xOffset: 0) {
+                viewModel.onChangeReplay(.tenSecondsForward)
+            }
+            PlaybackButtonControl(title: "playback-next-button-50", width: 30, xOffset: -8) {
+                viewModel.onChangeAudio(.next)
+            }
         }
     }
     
@@ -246,8 +241,8 @@ struct ContentView: View {
                 let selectedItemCircleView = Circle()
                     .foregroundColor(foregroundColor)
                     .frame(height: radius * 2)
-                    .offset(x: !isBookTextToggled ? offset.x : -offset.x)
-                if !isBookTextToggled {
+                    .offset(x: !isBookTextRepresentation ? offset.x : -offset.x)
+                if !isBookTextRepresentation {
                     selectedItemCircleView
                     Spacer()
                 } else {
@@ -271,22 +266,23 @@ struct ContentView: View {
                     .frame(width: 24)
                     .padding(.trailing, xPadding)
                 headphonesImage
-                    .foregroundColor(!isBookTextToggled ? .white : .black)
+                    .foregroundColor(!isBookTextRepresentation ? .white : .black)
                 multilineTextImage
-                    .foregroundColor(!isBookTextToggled ? .black : .white)
+                    .foregroundColor(!isBookTextRepresentation ? .black : .white)
             }
         }
         .frame(width: componentWidth, height: componentHeight)
         .overlay(capsuleOverlay)
         .onTapGesture {
+            let newValue = !isBookTextRepresentation
+            let repr: ContentViewModel.AudiobookRepresentation = newValue ? .text : .audio
+            viewModel.onSwitchAudioAndTextView(repr.previous, repr)
             withAnimation {
-                isBookTextToggled.toggle()
+                isBookTextRepresentation.toggle()
             }
         }
     }
 }
-
-private let noop: () -> Void = { print("HANDLE ACTION") }
 
 private enum Constant {
     static let keyPointTitleText: (Int, Int) -> String = { i, max in
@@ -295,10 +291,29 @@ private enum Constant {
     static let firstKeyPointText = "The business of video game entertainment is a serious and booming endeavor"
 }
 
-struct SizeScalingButtonStyle: ButtonStyle {
+private struct SizeScalingButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? 0.75 : 1)
             .animation(.easeInOut(duration: 0.2), value: configuration.isPressed)
+    }
+}
+
+private struct PlaybackButtonControl: View {
+    let title: String
+    let width: CGFloat
+    let xOffset: CGFloat
+    let perform: () -> Void
+    
+    var body: some View {
+        Button {
+            perform()
+        } label: {
+            Image(title)
+                .resizable()
+                .scaledToFit()
+                .frame(width: width)
+                .offset(x: xOffset)
+        }.buttonStyle(SizeScalingButtonStyle())
     }
 }
