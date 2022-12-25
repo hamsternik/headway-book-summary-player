@@ -27,6 +27,8 @@
 		62CD491A2953647D00AC4D8B /* 10_Star Wars 1313.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490D2953647D00AC4D8B /* 10_Star Wars 1313.mp3 */; };
 		62CD491B2953647D00AC4D8B /* blood-sweat-and-pixels-bookcover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490E2953647D00AC4D8B /* blood-sweat-and-pixels-bookcover.jpg */; };
 		62CD491C2953647D00AC4D8B /* 04_Diablo III.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490F2953647D00AC4D8B /* 04_Diablo III.mp3 */; };
+		62EE4B812958B3AE00B4DE67 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EE4B802958B3AE00B4DE67 /* AudioPlayer.swift */; };
+		62EE4B842958C5E900B4DE67 /* AudioPlayerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EE4B832958C5E900B4DE67 /* AudioPlayerDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,9 @@
 		62CD490D2953647D00AC4D8B /* 10_Star Wars 1313.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10_Star Wars 1313.mp3"; sourceTree = "<group>"; };
 		62CD490E2953647D00AC4D8B /* blood-sweat-and-pixels-bookcover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blood-sweat-and-pixels-bookcover.jpg"; sourceTree = "<group>"; };
 		62CD490F2953647D00AC4D8B /* 04_Diablo III.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "04_Diablo III.mp3"; sourceTree = "<group>"; };
+		62EE4B802958B3AE00B4DE67 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		62EE4B822958B57900B4DE67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		62EE4B832958C5E900B4DE67 /* AudioPlayerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +112,7 @@
 		62CD48EF29531EAF00AC4D8B /* BookSummaryPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				62EE4B822958B57900B4DE67 /* Info.plist */,
 				62CD48F129531EAF00AC4D8B /* Resources */,
 				62CD48F529531EAF00AC4D8B /* Sources */,
 				62CD48F829531EAF00AC4D8B /* Tests */,
@@ -136,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				62CD491E295370A600AC4D8B /* Views */,
+				62EE4B802958B3AE00B4DE67 /* AudioPlayer.swift */,
+				62EE4B832958C5E900B4DE67 /* AudioPlayerDataSource.swift */,
 				62CD48F629531EAF00AC4D8B /* BookSummaryPlayerApp.swift */,
 			);
 			path = Sources;
@@ -309,8 +317,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62EE4B842958C5E900B4DE67 /* AudioPlayerDataSource.swift in Sources */,
 				62CD48FE29531ECE00AC4D8B /* ContentView.swift in Sources */,
 				62CD48FD29531ECB00AC4D8B /* BookSummaryPlayerApp.swift in Sources */,
+				62EE4B812958B3AE00B4DE67 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,8 +467,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BookSummaryPlayer/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = C5B4S79D6V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookSummaryPlayer/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -485,8 +497,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BookSummaryPlayer/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = C5B4S79D6V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookSummaryPlayer/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

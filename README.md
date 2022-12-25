@@ -32,3 +32,7 @@ The technical solution described in the [tech spec](Documentation/BookSummaryPla
 - [Media Control Icons](https://icons8.com/icon/set/media-controls/windows)
 - [SwiftUI Slider. Apple component](https://developer.apple.com/documentation/swiftui/slider)
 - [How to customise the Slider in SwiftUI](https://swdevnotes.com/swift/2021/how-to-customise-the-slider-in-swiftui/)
+- [Async await in Swift explained with code examples](https://www.avanderlee.com/swift/async-await/)
+- [Throwing and asynchronous Swift properties](https://www.swiftbysundell.com/articles/throwing-async-properties/)
+- [Working with files and folders in Swift](https://www.swiftbysundell.com/articles/working-with-files-and-folders-in-swift/)
+- [Loading media data asynchronously](https://developer.apple.com/documentation/avfoundation/media_assets/loading_media_data_asynchronously)
