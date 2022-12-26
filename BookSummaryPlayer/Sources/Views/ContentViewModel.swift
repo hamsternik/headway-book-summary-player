@@ -42,6 +42,7 @@ final class ContentViewModel: ObservableObject {
     init(
         playbackTime: Double,
         audioRate: AudioRate,
+        currentChapterIndex: Int,
         onTapClose: @escaping () -> Void,
         onChangeSpeed: @escaping (AudioRate) -> Void,
         onChangeReplay: @escaping (_ to: AudioReplayUpdate) -> Void,
@@ -51,6 +52,7 @@ final class ContentViewModel: ObservableObject {
     ) {
         self.playbackTime = playbackTime
         self.audioRate = audioRate
+        self.currentChapterIndex = currentChapterIndex
         self.onTapClose = onTapClose
         self.onChangeSpeed = onChangeSpeed
         self.onChangeReplay = onChangeReplay
@@ -61,6 +63,7 @@ final class ContentViewModel: ObservableObject {
     
     @Published private(set) var playbackTime: Double
     @Published var audioRate: AudioRate
+    @Published var currentChapterIndex: Int
     let onTapClose: () -> Void
     let onChangeSpeed: (AudioRate) -> Void
     let onChangeReplay: (_ to: AudioReplayUpdate) -> Void

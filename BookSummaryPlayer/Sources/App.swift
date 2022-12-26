@@ -17,6 +17,7 @@ struct BookSummaryPlayerApp: App {
                 viewModel: .init(
                     playbackTime: viewModel.playbackTime,
                     audioRate: viewModel.audioRate,
+                    currentChapterIndex: viewModel.currentChapterIndex,
                     onTapClose: viewModel.handleScreenClose,
                     onChangeSpeed: viewModel.handlePlaybackSpeed,
                     onChangeReplay: viewModel.handleSeekInterval,

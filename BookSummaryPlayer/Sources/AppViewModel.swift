@@ -13,9 +13,10 @@ final class AppViewModel: ObservableObject {
         get async throws { try await audioPlayer.currentAudioDuration }
     }
     private(set) var audioRate: ContentViewModel.AudioRate = .standard
+    @Published private(set) var currentChapterIndex: Int = 0
     
     func onAppear() {
-        setNewChapter(with: dataSource.currentChapter.url)
+        configureAudioPlayer(with: dataSource.currentChapter.url)
     }
     
     func handleScreenClose() {
@@ -53,9 +54,10 @@ final class AppViewModel: ObservableObject {
             guard newIndex < dataSource.book.chapters.count else { return }
         }
         
+        currentChapterIndex = newIndex
         let newChapter = dataSource.book.chapters[newIndex]
         dataSource.currentChapter = newChapter
-        setNewChapter(with: newChapter.url)
+        configureAudioPlayer(with: newChapter.url)
     }
     
     func handleAudioState(isPlaying: Bool) {
@@ -87,8 +89,10 @@ final class AppViewModel: ObservableObject {
     private let audioPlayer: AudioPlayer
     private let dataSource: BloodSweatAndPixelsBookDataSource
     
-    private func setNewChapter(with chapterURL: URL?) {
-        guard let url = chapterURL else { return assertionFailure("Failed to get the audiofile URL.") }
+    private func configureAudioPlayer(with assetURL: URL?) {
+        guard let url = assetURL else {
+            return assertionFailure("Failed to get the audiofile URL.")
+        }
         audioPlayer.configure(with: url)
     }
 }

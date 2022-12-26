@@ -13,6 +13,7 @@ struct ContentView_Previews: PreviewProvider {
             viewModel: ContentViewModel(
                 playbackTime: 0,
                 audioRate: .standard,
+                currentChapterIndex: 0,
                 onTapClose: {},
                 onChangeSpeed: { _ in },
                 onChangeReplay: { _ in },
@@ -163,9 +164,29 @@ struct ContentView: View {
     @ViewBuilder
     private var playerControlsView: some View {
         HStack(alignment: .center, spacing: 28) {
-            PlaybackButtonControl(title: "playback-prev-button-50", width: 32, xOffset: 8) {
+            Button {
                 viewModel.onChangeAudio(.previous)
+            } label: {
+                let imageTitle = "playback-prev-button-50"
+                if viewModel.currentChapterIndex != 0 {
+                    Image(imageTitle)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 44)
+                        .offset(x: 8)
+                } else {
+                    Image(imageTitle)
+                        .renderingMode(.template)
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.gray)
+                        .frame(width: 44)
+                        .offset(x: 8)
+                }
             }
+            .buttonStyle(SizeScalingButtonStyle())
+            .disabled(viewModel.currentChapterIndex == .zero)
+
             PlaybackButtonControl(title: "replay-back-5-button-64", width: 44, xOffset: 0) {
                 viewModel.onChangeReplay(.fiveSecondsBack)
             }
