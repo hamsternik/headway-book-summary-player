@@ -12,8 +12,9 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(
             viewModel: ContentViewModel(
                 playbackTime: 0,
+                audioRate: .standard,
                 onTapClose: {},
-                onChangeSpeed: {},
+                onChangeSpeed: { _ in },
                 onChangeReplay: { _ in },
                 onChangeAudio: { _ in },
                 onPlayAudio: { _ in },
@@ -142,9 +143,11 @@ struct ContentView: View {
     @ViewBuilder
     private var audioSpeedButton: some View {
         Button {
-            viewModel.onChangeSpeed()
+            let newValue = viewModel.audioRate.next
+            viewModel.audioRate = newValue
+            viewModel.onChangeSpeed(newValue)
         } label: {
-            Text("Speed 1x")
+            Text(viewModel.audioRate.uiValue)
                 .foregroundColor(.black)
                 .font(.body)
                 .fontWeight(.bold)
@@ -318,5 +321,15 @@ private struct PlaybackButtonControl: View {
                 .frame(width: width)
                 .offset(x: xOffset)
         }.buttonStyle(SizeScalingButtonStyle())
+    }
+}
+
+extension ContentViewModel.AudioRate {
+    var uiValue: String {
+        switch self {
+        case .standard: return "Speed 1x"
+        case .oneAndHalf: return "Speed 1.5x"
+        case .double: return "Speed 2x"
+        }
     }
 }

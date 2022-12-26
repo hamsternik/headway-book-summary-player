@@ -12,6 +12,7 @@ final class AppViewModel: ObservableObject {
     var playbackDuration: Double {
         get async throws { try await audioPlayer.currentAudioDuration }
     }
+    private(set) var audioRate: ContentViewModel.AudioRate = .standard
     
     func loadLocalBook() {
         guard let chapterURL = playerDataSource.source.chapters.first?.url else {
@@ -24,8 +25,10 @@ final class AppViewModel: ObservableObject {
         debugPrint("Handle action to close the current screen.")
     }
     
-    func handlePlaybackSpeed() {
-        audioPlayer.setRate()
+    func handlePlaybackSpeed(newValue: ContentViewModel.AudioRate) {
+        audioRate = newValue
+        guard !audioPlayer.isPaused else { return }
+        audioPlayer.setRate(audioRate.rawValue)
     }
     
     func handleSeekInterval(newValue: ContentViewModel.AudioReplayUpdate) {
@@ -50,7 +53,8 @@ final class AppViewModel: ObservableObject {
     
     func handleAudioState(isPlaying: Bool) {
         if isPlaying {
-            audioPlayer.play()
+            /// `setRate()` with the 1.0 value is equal to the `play()` method. Passing 0.0 rate is equal to `pause()`.
+            audioPlayer.setRate(audioRate.rawValue)
         } else {
             audioPlayer.pause()
         }

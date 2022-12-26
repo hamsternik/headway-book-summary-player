@@ -27,16 +27,30 @@ final class ContentViewModel: ObservableObject {
         }
     }
     
+    enum AudioRate: Float, Hashable {
+        case standard = 1.0, oneAndHalf = 1.5, double = 2.0
+        
+        var next: AudioRate {
+            switch self {
+            case .standard: return .oneAndHalf
+            case .oneAndHalf: return .double
+            case .double: return .standard
+            }
+        }
+    }
+    
     init(
         playbackTime: Double,
+        audioRate: AudioRate,
         onTapClose: @escaping () -> Void,
-        onChangeSpeed: @escaping () -> Void,
+        onChangeSpeed: @escaping (AudioRate) -> Void,
         onChangeReplay: @escaping (_ to: AudioReplayUpdate) -> Void,
         onChangeAudio: @escaping (_ on: TargetableAudio) -> Void,
         onPlayAudio: @escaping (Bool) -> Void,
         onSwitchAudioAndTextView: @escaping (_ from: AudiobookRepresentation, _ to: AudiobookRepresentation) -> Void
     ) {
         self.playbackTime = playbackTime
+        self.audioRate = audioRate
         self.onTapClose = onTapClose
         self.onChangeSpeed = onChangeSpeed
         self.onChangeReplay = onChangeReplay
@@ -46,8 +60,9 @@ final class ContentViewModel: ObservableObject {
     }
     
     @Published private(set) var playbackTime: Double
+    @Published var audioRate: AudioRate
     let onTapClose: () -> Void
-    let onChangeSpeed: () -> Void
+    let onChangeSpeed: (AudioRate) -> Void
     let onChangeReplay: (_ to: AudioReplayUpdate) -> Void
     let onChangeAudio: (_ on: TargetableAudio) -> Void
     let onPlayAudio: (Bool) -> Void

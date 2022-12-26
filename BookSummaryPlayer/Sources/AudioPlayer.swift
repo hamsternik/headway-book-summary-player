@@ -11,9 +11,19 @@ import Foundation
 final class AudioPlayer {
     static let shared = AudioPlayer()
     
-    private var player = AVPlayer()
-    private weak var playerDelegate: AVAudioPlayerDelegate?
-    private var currentAudioAsset: AVAsset? //check out `player.replaceCurrentItem(with:)` method when update the local asset
+    var isPaused: Bool {
+        player.rate.isEqual(to: 0)
+    }
+    
+    var currentTime: Double {
+        player.currentTime().seconds
+    }
+    
+    var currentAudioDuration: Double {
+        get async throws {
+            try await currentAudioAsset?.load(.duration).seconds ?? 0
+        }
+    }
     
     func configure(with url: URL) {
         do {
@@ -46,13 +56,7 @@ final class AudioPlayer {
         player.seek(to: seekTime)
     }
     
-    var currentTime: Double {
-        player.currentTime().seconds
-    }
-    
-    var currentAudioDuration: Double {
-        get async throws {
-            try await currentAudioAsset?.load(.duration).seconds ?? 0
-        }
-    }
+    private var player = AVPlayer()
+    private weak var playerDelegate: AVAudioPlayerDelegate?
+    private var currentAudioAsset: AVAsset? //check out `player.replaceCurrentItem(with:)` method when update the local asset
 }
