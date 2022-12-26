@@ -16,7 +16,6 @@ final class AudioPlayer {
     private var currentAudioAsset: AVAsset? //check out `player.replaceCurrentItem(with:)` method when update the local asset
     
     func configure(with url: URL) {
-        currentAudioAsset = AVAsset(url: url)
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
             try AVAudioSession.sharedInstance().setActive(true)
@@ -24,6 +23,10 @@ final class AudioPlayer {
             debugPrint("Failed to set the category, mode for the shared AVAudioSession or set the session active.")
         }
         player.allowsExternalPlayback = true
+        
+        let asset = AVAsset(url: url)
+        currentAudioAsset = asset
+        player.replaceCurrentItem(with: AVPlayerItem(asset: asset))
     }
     
     func play() {

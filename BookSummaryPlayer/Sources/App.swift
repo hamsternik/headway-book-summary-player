@@ -24,6 +24,9 @@ struct BookSummaryPlayerApp: App {
                     onSwitchAudioAndTextView: viewModel.handleSwitchBetweenAudioText
                 )
             )
+            .onAppear {
+                viewModel.loadLocalBook()
+            }
         }
     }
 }

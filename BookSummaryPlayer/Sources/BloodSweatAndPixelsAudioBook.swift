@@ -11,7 +11,7 @@ struct BloodSweatAndPixels: Audiobook {
     struct Chapter: Audiofile {
         let id: String
         let fileExtension: String = "mp3"
-        var path: String { "Resources/Audiobooks/BloodSweatAndPixels/\(id).\(fileExtension)" }
+        var path: String { id }
     }
     
     let chapters = [

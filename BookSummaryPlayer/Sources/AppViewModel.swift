@@ -13,6 +13,13 @@ final class AppViewModel: ObservableObject {
         get async throws { try await audioPlayer.currentAudioDuration }
     }
     
+    func loadLocalBook() {
+        guard let chapterURL = playerDataSource.source.chapters.first?.url else {
+            return assertionFailure("Failed to get the audiofile URL.")
+        }
+        audioPlayer.configure(with: chapterURL)
+    }
+    
     func handleScreenClose() {
         debugPrint("Handle action to close the current screen.")
     }
@@ -66,4 +73,8 @@ final class AppViewModel: ObservableObject {
     
     private let audioPlayer: AudioPlayer
     private let playerDataSource: AudioPlayerDataSource
+}
+
+private extension Audiofile {
+    var url: URL? { Bundle.main.url(forResource: path, withExtension: fileExtension) }
 }

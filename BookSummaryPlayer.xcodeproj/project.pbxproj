@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62785E612959AC4300E2D177 /* 00_Para slov ot perevodchika.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62785E602959AC4300E2D177 /* 00_Para slov ot perevodchika.mp3 */; };
 		62CD48ED29531E9700AC4D8B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 62CD48EB29531E9700AC4D8B /* LICENSE */; };
 		62CD48EE29531E9700AC4D8B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 62CD48EC29531E9700AC4D8B /* README.md */; };
 		62CD48FA29531EB800AC4D8B /* BookSummaryPlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CD48F929531EAF00AC4D8B /* BookSummaryPlayerTests.swift */; };
@@ -22,7 +23,6 @@
 		62CD49152953647D00AC4D8B /* 09_The Witcher 3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD49082953647B00AC4D8B /* 09_The Witcher 3.mp3 */; };
 		62CD49162953647D00AC4D8B /* 11_Epilog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD49092953647B00AC4D8B /* 11_Epilog.mp3 */; };
 		62CD49172953647D00AC4D8B /* 01_Pillars of Eternity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490A2953647C00AC4D8B /* 01_Pillars of Eternity.mp3 */; };
-		62CD49182953647D00AC4D8B /* 00_Para slov ot perevodchika.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490B2953647C00AC4D8B /* 00_Para slov ot perevodchika.mp3 */; };
 		62CD49192953647D00AC4D8B /* 08_Destiny.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490C2953647D00AC4D8B /* 08_Destiny.mp3 */; };
 		62CD491A2953647D00AC4D8B /* 10_Star Wars 1313.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490D2953647D00AC4D8B /* 10_Star Wars 1313.mp3 */; };
 		62CD491B2953647D00AC4D8B /* blood-sweat-and-pixels-bookcover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62CD490E2953647D00AC4D8B /* blood-sweat-and-pixels-bookcover.jpg */; };
@@ -48,6 +48,7 @@
 /* Begin PBXFileReference section */
 		620A170029531CD500AA9239 /* BookSummaryPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookSummaryPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		620A171029531CD600AA9239 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62785E602959AC4300E2D177 /* 00_Para slov ot perevodchika.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "00_Para slov ot perevodchika.mp3"; sourceTree = "<group>"; };
 		62CD48EB29531E9700AC4D8B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		62CD48EC29531E9700AC4D8B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		62CD48F229531EAF00AC4D8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		62CD49082953647B00AC4D8B /* 09_The Witcher 3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "09_The Witcher 3.mp3"; sourceTree = "<group>"; };
 		62CD49092953647B00AC4D8B /* 11_Epilog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 11_Epilog.mp3; sourceTree = "<group>"; };
 		62CD490A2953647C00AC4D8B /* 01_Pillars of Eternity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01_Pillars of Eternity.mp3"; sourceTree = "<group>"; };
-		62CD490B2953647C00AC4D8B /* 00_Para slov ot perevodchika.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "00_Para slov ot perevodchika.mp3"; sourceTree = "<group>"; };
 		62CD490C2953647D00AC4D8B /* 08_Destiny.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 08_Destiny.mp3; sourceTree = "<group>"; };
 		62CD490D2953647D00AC4D8B /* 10_Star Wars 1313.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "10_Star Wars 1313.mp3"; sourceTree = "<group>"; };
 		62CD490E2953647D00AC4D8B /* blood-sweat-and-pixels-bookcover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "blood-sweat-and-pixels-bookcover.jpg"; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 		62CD491D2953651600AC4D8B /* BloodSweatAndPixels */ = {
 			isa = PBXGroup;
 			children = (
-				62CD490B2953647C00AC4D8B /* 00_Para slov ot perevodchika.mp3 */,
+				62785E602959AC4300E2D177 /* 00_Para slov ot perevodchika.mp3 */,
 				62CD490A2953647C00AC4D8B /* 01_Pillars of Eternity.mp3 */,
 				62CD49032953647900AC4D8B /* 02_Uncharted 4.mp3 */,
 				62CD49052953647A00AC4D8B /* 03_Stardew Valley.mp3 */,
@@ -297,12 +297,12 @@
 			files = (
 				62CD49142953647D00AC4D8B /* 05_Halo Wars.mp3 in Resources */,
 				62CD49192953647D00AC4D8B /* 08_Destiny.mp3 in Resources */,
+				62785E612959AC4300E2D177 /* 00_Para slov ot perevodchika.mp3 in Resources */,
 				62CD48FC29531EC100AC4D8B /* Preview Assets.xcassets in Resources */,
 				62CD49152953647D00AC4D8B /* 09_The Witcher 3.mp3 in Resources */,
 				62CD49102953647D00AC4D8B /* 02_Uncharted 4.mp3 in Resources */,
 				62CD48ED29531E9700AC4D8B /* LICENSE in Resources */,
 				62CD49162953647D00AC4D8B /* 11_Epilog.mp3 in Resources */,
-				62CD49182953647D00AC4D8B /* 00_Para slov ot perevodchika.mp3 in Resources */,
 				62CD48FB29531EBE00AC4D8B /* Assets.xcassets in Resources */,
 				62CD49122953647D00AC4D8B /* 03_Stardew Valley.mp3 in Resources */,
 				62CD491C2953647D00AC4D8B /* 04_Diablo III.mp3 in Resources */,

@@ -18,7 +18,3 @@ protocol Audiofile: Identifiable, Hashable {
     var path: String { get }
     var fileExtension: String { get }
 }
-
-extension Audiofile {
-    var url: URL { URL(fileURLWithPath: path) }
-}
