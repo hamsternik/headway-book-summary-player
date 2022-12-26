@@ -8,8 +8,8 @@
 import Foundation
 
 final class ContentViewModel: ObservableObject {
-    enum TargetableAudio: Hashable, CaseIterable {
-        case previous, next
+    enum TargetableAudio: Int, Hashable {
+        case previous = -1, next = 1
     }
     
     enum AudioReplayUpdate: Hashable {

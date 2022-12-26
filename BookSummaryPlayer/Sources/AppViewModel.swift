@@ -14,11 +14,8 @@ final class AppViewModel: ObservableObject {
     }
     private(set) var audioRate: ContentViewModel.AudioRate = .standard
     
-    func loadLocalBook() {
-        guard let chapterURL = playerDataSource.source.chapters.first?.url else {
-            return assertionFailure("Failed to get the audiofile URL.")
-        }
-        audioPlayer.configure(with: chapterURL)
+    func onAppear() {
+        setNewChapter(with: dataSource.currentChapter.url)
     }
     
     func handleScreenClose() {
@@ -43,12 +40,22 @@ final class AppViewModel: ObservableObject {
     }
     
     func handleAudioReplace(newValue: ContentViewModel.TargetableAudio) {
+        guard let currentIdx = dataSource.book.chapters.firstIndex(of: dataSource.currentChapter) else {
+            return assertionFailure("Failed to get index of the current chapter from the data source.")
+        }
+        let distance = dataSource.book.chapters.distance(from: dataSource.book.chapters.startIndex, to: currentIdx)
+        
+        let newIndex = distance + newValue.rawValue
         switch newValue {
         case .previous:
-            break //TODO: implement the case
+            guard newIndex >= 0 else { return }
         case .next:
-            break //TODO: implement the case
+            guard newIndex < dataSource.book.chapters.count else { return }
         }
+        
+        let newChapter = dataSource.book.chapters[newIndex]
+        dataSource.currentChapter = newChapter
+        setNewChapter(with: newChapter.url)
     }
     
     func handleAudioState(isPlaying: Bool) {
@@ -69,14 +76,21 @@ final class AppViewModel: ObservableObject {
     
     init(
         audioPlayer: AudioPlayer = AudioPlayer(),
-        playerDataSource: AudioPlayerDataSource = AudioPlayerDataSource(source: BloodSweatAndPixels())
+        dataSource: BloodSweatAndPixelsBookDataSource = BloodSweatAndPixelsBookDataSource(
+            book: BloodSweatAndPixels(), currentChapter: BloodSweatAndPixels().chapters.first!
+        )
     ) {
         self.audioPlayer = audioPlayer
-        self.playerDataSource = playerDataSource
+        self.dataSource = dataSource
     }
     
     private let audioPlayer: AudioPlayer
-    private let playerDataSource: AudioPlayerDataSource
+    private let dataSource: BloodSweatAndPixelsBookDataSource
+    
+    private func setNewChapter(with chapterURL: URL?) {
+        guard let url = chapterURL else { return assertionFailure("Failed to get the audiofile URL.") }
+        audioPlayer.configure(with: url)
+    }
 }
 
 private extension Audiofile {

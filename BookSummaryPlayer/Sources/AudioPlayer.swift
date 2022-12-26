@@ -9,8 +9,6 @@ import AVFoundation
 import Foundation
 
 final class AudioPlayer {
-    static let shared = AudioPlayer()
-    
     var isPaused: Bool {
         player.rate.isEqual(to: 0)
     }
@@ -26,14 +24,6 @@ final class AudioPlayer {
     }
     
     func configure(with url: URL) {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            debugPrint("Failed to set the category, mode for the shared AVAudioSession or set the session active.")
-        }
-        player.allowsExternalPlayback = true
-        
         let asset = AVAsset(url: url)
         currentAudioAsset = asset
         player.replaceCurrentItem(with: AVPlayerItem(asset: asset))
@@ -54,6 +44,16 @@ final class AudioPlayer {
     func setSeekInterval(_ interval: Double) {
         let seekTime = CMTime(seconds: interval, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         player.seek(to: seekTime)
+    }
+    
+    init() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            debugPrint("Failed to set the category, mode for the shared AVAudioSession or set the session active.")
+        }
+        player.allowsExternalPlayback = true
     }
     
     private var player = AVPlayer()

@@ -1,5 +1,5 @@
 //
-//  AudioPlayerDataSource.swift
+//  BloodSweatAndPixelsBookDataSource.swift
 //  BookSummaryPlayer
 //
 //  Created by Nikita Khomitsevych on 25.12.2022.
@@ -7,10 +7,12 @@
 
 import Foundation
 
-final class AudioPlayerDataSource {
-    init(source: any Audiobook) {
-        self.source = source
-    }
+final class BloodSweatAndPixelsBookDataSource {
+    var book: BloodSweatAndPixels
+    var currentChapter: BloodSweatAndPixels.Chapter
     
-    private(set) var source: any Audiobook
+    init(book: BloodSweatAndPixels, currentChapter: BloodSweatAndPixels.Chapter) {
+        self.book = book
+        self.currentChapter = currentChapter
+    }
 }
