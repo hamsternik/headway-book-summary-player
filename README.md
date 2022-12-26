@@ -26,18 +26,18 @@ All audio and image assets are keeping in the /Resources/Audiobooks. Find out ei
 
 Key things you can see in the test project:
 
-- [ ] UI has been builded with SwiftUI.
-- [ ] User interface is the same as on the design.
+- [x] UI has been builded with SwiftUI.
+- [x] User interface is the same as on the design.
 - [ ] Swift Concurrency framework has been used.
 - [ ] Composable architecture has been used.
-- [ ] Application can play only the one audio file.
-- [ ] Application can play the set of audio files, eg. audio book.
-- [ ] Play / pause feature.
+- [x] Application can play only the one audio file.
+- [x] Application can play the set of audio files, eg. audio book.
+- [x] Play / pause feature.
 - [ ] Audio fast-forward and rewind features.
 - [ ] Audio custom seeking time interval feature (slider).
 - [ ] Audio pre-defined seeking time intervals feature (e.g. 5sec back or 10sec forward).
-- [ ] Change to the previous / next audio feature.
-- [ ] Extra\*. Bottom audio-text UI control (switcher) is toggling.
+- [x] Change to the previous / next audio feature.
+- [x] Extra\*. Bottom audio-text UI control (switcher) is toggling.
 - [ ] Extra\*. Bottom audio-text switcher is switching with animation.
 
 ### Implementation Details
