@@ -5,8 +5,8 @@
 //  Created by Nikita Khomitsevych on 25.12.2022.
 //
 
-import Foundation
 import AVFoundation
+import Foundation
 
 final class AudioPlayer {
     static let shared = AudioPlayer()
@@ -36,6 +36,11 @@ final class AudioPlayer {
     
     func setRate(_ rate: Float = 1.0) {
         player.rate = rate
+    }
+    
+    func setSeekInterval(_ interval: Double) {
+        let seekTime = CMTime(seconds: interval, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        player.seek(to: seekTime)
     }
     
     var currentTime: Double {

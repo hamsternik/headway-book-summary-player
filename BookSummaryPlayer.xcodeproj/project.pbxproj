@@ -32,6 +32,7 @@
 		62EE4B862958E52F00B4DE67 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EE4B852958E52F00B4DE67 /* ContentViewModel.swift */; };
 		62EE4B882958E7A200B4DE67 /* AudioBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EE4B872958E7A200B4DE67 /* AudioBook.swift */; };
 		62EE4B8A2958E7DA00B4DE67 /* BloodSweatAndPixelsAudioBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EE4B892958E7DA00B4DE67 /* BloodSweatAndPixelsAudioBook.swift */; };
+		62EE4B8C2958F79500B4DE67 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EE4B8B2958F79500B4DE67 /* AppViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		62EE4B852958E52F00B4DE67 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		62EE4B872958E7A200B4DE67 /* AudioBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBook.swift; sourceTree = "<group>"; };
 		62EE4B892958E7DA00B4DE67 /* BloodSweatAndPixelsAudioBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodSweatAndPixelsAudioBook.swift; sourceTree = "<group>"; };
+		62EE4B8B2958F79500B4DE67 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			children = (
 				62CD491E295370A600AC4D8B /* Views */,
 				62CD48F629531EAF00AC4D8B /* App.swift */,
+				62EE4B8B2958F79500B4DE67 /* AppViewModel.swift */,
 				62EE4B872958E7A200B4DE67 /* AudioBook.swift */,
 				62EE4B892958E7DA00B4DE67 /* BloodSweatAndPixelsAudioBook.swift */,
 				62EE4B802958B3AE00B4DE67 /* AudioPlayer.swift */,
@@ -328,6 +331,7 @@
 			files = (
 				62EE4B842958C5E900B4DE67 /* AudioPlayerDataSource.swift in Sources */,
 				62CD48FE29531ECE00AC4D8B /* ContentView.swift in Sources */,
+				62EE4B8C2958F79500B4DE67 /* AppViewModel.swift in Sources */,
 				62CD48FD29531ECB00AC4D8B /* App.swift in Sources */,
 				62EE4B8A2958E7DA00B4DE67 /* BloodSweatAndPixelsAudioBook.swift in Sources */,
 				62EE4B882958E7A200B4DE67 /* AudioBook.swift in Sources */,

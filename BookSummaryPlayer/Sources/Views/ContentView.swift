@@ -11,11 +11,12 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(
             viewModel: ContentViewModel(
+                playbackTime: 0,
                 onTapClose: {},
                 onChangeSpeed: {},
                 onChangeReplay: { _ in },
                 onChangeAudio: { _ in },
-                onPlayOrPauseAudio: {},
+                onPlayAudio: { _ in },
                 onSwitchAudioAndTextView: { _, _ in }
             )
         )
@@ -30,16 +31,17 @@ struct ContentView: View {
             Color(red: 254 / 255, green: 248 / 255, blue: 247 / 255)
                 .ignoresSafeArea(.all)
             containerView
-        }.onAppear {
-            Task {
-                guard let duration = try? await viewModel.audioPlayer.currentAudioDuration else { return }
-                audioDuration = String(format: "%.2f", duration)
-            }
         }
+//        .onAppear {
+//            Task {
+//                guard let duration = try? await viewModel.audioPlayer.currentAudioDuration else { return }
+//                audioDuration = String(format: "%.2f", duration)
+//            }
+//        }
     }
     
     @State private var isPaused = false
-    @State private var audioCurrentPlace: Double = 0
+    @State private var audioCurrentPlace: Double = 0 //TODO: subscribe on the `playbackTime`
     @State private var isAudioPlaceChanged = false
     @State private var isBookTextRepresentation = false
     @State private var audioDuration: String = "00:00"
@@ -123,7 +125,7 @@ struct ContentView: View {
         Slider(value: $audioCurrentPlace, in: 0.0...2.16, step: 0.01) {
             Text("Current audio place")
         } minimumValueLabel: {
-            Text("\(String(format: "%.2f", viewModel.audioPlayer.currentTime))")
+            Text("\(String(format: "%.2f", viewModel.playbackTime))")
                 .font(.subheadline)
                 .fontWeight(.light)
                 .foregroundColor(.gray)
@@ -166,6 +168,7 @@ struct ContentView: View {
             }
             Button {
                 isPaused.toggle()
+                viewModel.onPlayAudio(isPaused)
             } label: {
                 !isPaused
                 ? Image("play-button-100")
