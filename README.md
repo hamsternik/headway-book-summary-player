@@ -22,11 +22,29 @@ All audio and image assets are keeping in the /Resources/Audiobooks. Find out ei
 
 </details>
 
+## Summary
+
+Key things you can see in the test project:
+
+- [ ] UI has been builded with SwiftUI.
+- [ ] User interface is the same as on the design.
+- [ ] Swift Concurrency framework has been used.
+- [ ] Composable architecture has been used.
+- [ ] Application can play only the one audio file.
+- [ ] Application can play the set of audio files, eg. audio book.
+- [ ] Play / pause feature.
+- [ ] Audio fast-forward and rewind features.
+- [ ] Audio custom seeking time interval feature (slider).
+- [ ] Audio pre-defined seeking time intervals feature (e.g. 5sec back or 10sec forward).
+- [ ] Change to the previous / next audio feature.
+- [ ] Extra\*. Bottom audio-text UI control (switcher) is toggling.
+- [ ] Extra\*. Bottom audio-text switcher is switching with animation.
+
 ### Implementation Details
 
 The technical solution described in the [tech spec](Documentation/BookSummaryPlayerTechSpec.md) document.
 
-### MISC: Resources That Helps Me To Build The App
+## MISC: Resources That Helps Me To Build The App
 
 - [Typography. Font Specifications](https://developer.apple.com/design/human-interface-guidelines/foundations/typography)
 - [Media Control Icons](https://icons8.com/icon/set/media-controls/windows)
